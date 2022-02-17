@@ -1,0 +1,14 @@
+@import "../index.scss";
+
+.banner {
+  background-color: var(--green-dark);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: var(--banner-height-mobile);
+  z-index: 0;
+
+  @media screen and (min-width: 641px) {
+    height: var(--banner-height-desktop);
+  };
+}
