@@ -2,13 +2,16 @@
 
 .banner {
   background-color: var(--green-dark);
+  background-image: url("/assets/top-background-mobile.svg");
   position: absolute;
   top: 0px;
   width: 100%;
   height: var(--banner-height-mobile);
   z-index: 0;
+  overflow: hidden;
 
   @media screen and (min-width: 641px) {
     height: var(--banner-height-desktop);
+    background-image: url("/assets/top-background-desktop.svg");
   };
 }

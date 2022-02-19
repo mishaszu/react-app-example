@@ -29,16 +29,22 @@
       margin-left: 40px;
     };
   }
-  button {
+
+  .search-bar-button {
     background-color: inherit;
     border: none;
     color: var(--gray-light-1);
+    cursor: pointer;
     font-size: 13px;
     font-weight: 700;
     line-height: 24px;
     padding: 0px 20px;
-    &:active {
+    &:hover {
       background-color: var(--green-light);
+    }
+
+    &:active {
+      background-color: GhostWhite;
     }
 
     @media screen and (min-width: 641px) {

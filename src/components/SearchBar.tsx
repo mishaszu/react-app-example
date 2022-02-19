@@ -1,15 +1,15 @@
+import {FormEventHandler} from 'react';
 import './SearchBar.scss'
 
 interface Props {
-  onSubmit: any,
-  value: string
+  onSubmit: FormEventHandler<HTMLFormElement>,
 }
 
-export default function SearchBar({onSubmit, value}: Props) {
+export default function SearchBar({onSubmit}: Props) {
   return (
-    <form className="search-bar" onSubmit={onSubmit}>
+    <form className="search-bar" onSubmit={onSubmit}  autoComplete="off">
       <input placeholder="Search" type="text" name="search" />
-      <button type="submit">Submit</button>
+      <button className="search-bar-button" type="submit">Submit</button>
     </form>
   )
 }
