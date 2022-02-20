@@ -59,7 +59,6 @@ function App() {
       <div className="app-content">
         <SearchBar onSubmit={onSubmit} />
         <SearchedTags tags={searchTagsValues} clearTag={clearTag} clearAllTags={clearAllTags} />
-        <div className="searched-tabs"></div>
         {
           transitions((styles, item) => {
             return <JobCard styles={styles} addTag={addTag} key={item.id} jobOffer={item} />

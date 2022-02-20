@@ -129,7 +129,7 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
     width: 100%;
 
     @media screen and (min-width: 641px) {
@@ -138,12 +138,16 @@
     };
 
     .tag {
-      background-color: var(--green-light);
+      background-color: var(--green-dark-rgba-01);
       border-radius: 4px;
       color: var(--green-dark);
       cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.1px;
+      line-height: 24px;
       margin: 0px;
-      padding: 6px var(--item-x-padding) var(--item-y-padding) var(--item-x-padding);
+      padding: var(--item-y-padding) var(--item-x-padding);
       &:hover {
         color: white;
         background-color: var(--green-dark);
