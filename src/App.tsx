@@ -14,17 +14,21 @@ function App() {
     logo: o.logo.slice(1)
   })), [])
 
+  const addTag = (tag: string) => {
+    if (
+      tag.length > 0
+      && searchTagsValues.every(v =>
+        v.trim().toLowerCase() !== tag.trim().toLowerCase()
+      )
+    ) {
+      setSearchTagsValue(old => old.concat(tag));
+    }
+  }
+
   const onSubmit = (e: any) => {
     e.preventDefault();
     const searchText = e.target.search.value;
-    if (
-      searchText.length > 0
-      && searchTagsValues.every(v =>
-        v.trim().toLowerCase() !== searchText.trim().toLowerCase()
-      )
-    ) {
-      setSearchTagsValue(old => old.concat(searchText));
-    }
+    addTag(searchText);
     e.target.reset();
   };
 
@@ -56,7 +60,7 @@ function App() {
         <div className="searched-tabs"></div>
         {
           jobs.filter(searchFilter).map(d =>
-            <JobCard key={d.id} jobOffer={d} />
+            <JobCard addTag={addTag} key={d.id} jobOffer={d} />
           )
         }
       </div>

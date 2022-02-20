@@ -16,10 +16,11 @@ export interface JobOffer {
 }
 
 interface Props {
-  jobOffer: JobOffer
+  jobOffer: JobOffer,
+  addTag(tag: string): void,
 }
 
-export default function JobCard({jobOffer}: Props) {
+export default function JobCard({jobOffer, addTag}: Props) {
   const tags = [jobOffer.role, jobOffer.level, ...jobOffer.tags]
   return <div className="job-card">
     <div className="left-side">
@@ -53,7 +54,7 @@ export default function JobCard({jobOffer}: Props) {
     </div>
     <div className="tags-wrapper">
       {
-        tags.map(t => <p key={`${jobOffer.id}-${t}`} className="tag">{t}</p>)
+        tags.map(t => <p onClick={_ => addTag(t)} key={`${jobOffer.id}-${t}`} className="tag">{t}</p>)
       }
     </div>
   </div >

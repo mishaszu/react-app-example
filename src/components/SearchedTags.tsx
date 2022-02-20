@@ -29,7 +29,9 @@ export function SearchedTags(
       }
     </div>
     {
-      tags.length > 0 && <p className="tag-clear" onClick={_ => clearAllTags()}>Clear All</p>
+      tags.length > 0
+      ? <p className="tag-clear" onClick={_ => clearAllTags()}>Clear All</p>
+      : null
     }
   </div>
 }
