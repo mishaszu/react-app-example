@@ -3,16 +3,18 @@ import {useTransition} from 'react-spring'
 import './App.scss'
 import Banner from './components/Banner'
 import SearchBar from './components/SearchBar'
-import JobCard, {JobOffer} from './components/JobCard'
+import JobCard, {JobOfferComplete} from './components/JobCard'
 import {SearchedTags} from './components/SearchedTags'
 import data from './data'
+import {searchFilterOffersByTags} from './utilities'
 
 function App() {
-  const [searchTagsValues, setSearchTagsValue] = useState(["Frontend"]);
+  const [searchTagsValues, setSearchTagsValue] = useState([] as string[]);
 
-  const jobs: JobOffer[] = useMemo(() => data.map(o => ({
+  const jobs: JobOfferComplete[] = useMemo(() => data.map(o => ({
     ...o,
-    logo: o.logo.slice(1)
+    logo: o.logo.slice(1),
+    completeTags: [o.role, o.level, ...o.tags]
   })), [])
 
   const addTag = (tag: string) => {
@@ -41,23 +43,14 @@ function App() {
     setSearchTagsValue([]);
   }
 
-  const searchFilter = (job: JobOffer) => {
-    if (searchTagsValues.length > 0) {
-      return searchTagsValues.every(searchTag => [job.role, job.level, ...job.tags].some(
-        t =>
-          t.toLowerCase() === searchTag.toLowerCase()
-      ))
-    } else {
-      return true;
-    }
-  }
+  const searchFilter = searchFilterOffersByTags(searchTagsValues);
 
   const transitions = useTransition(jobs.filter(searchFilter), {
     from: {opacity: 0, y: 10, maxHeight: 0, padding: "0px 0px 0px 0px", margin: "0px 0px"},
     enter: {opacity: 1, y: 0, maxHeight: 500, padding: "var(--card-padding)", margin: "12px 0px"},
     leave: {opacity: 0, y: 10, maxHeight: 0, padding: "0px 0px 0px 0px", margin: "0px 0px"},
     delay: 0,
-    trail:100
+    trail: 100
   });
 
   return (

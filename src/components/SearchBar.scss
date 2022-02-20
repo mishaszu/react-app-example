@@ -8,6 +8,7 @@
   margin-bottom: 20px;
   overflow: hidden;
   width: 100%;
+
   input {
     border: none;
     color: var(--black-1);
@@ -17,9 +18,11 @@
     margin-left: 20px;
     outline: none;
     width: 100%;
+
     &:focus::placeholder {
       color: transparent;
     }
+
     &::placeholder {
       color: var(--black-1);
       font-weight: 700;
@@ -39,9 +42,6 @@
     font-weight: 700;
     line-height: 24px;
     padding: 0px 20px;
-    &:hover {
-      background-color: var(--green-light);
-    }
 
     &:active {
       background-color: GhostWhite;
@@ -49,6 +49,10 @@
 
     @media screen and (min-width: 641px) {
       padding: 0px 40px;
+
+      &:hover {
+        background-color: var(--green-light);
+      }
     };
   }
 }

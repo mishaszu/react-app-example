@@ -9,10 +9,10 @@
   flex-direction: column;
   margin: 12px 0px;
   min-width: 305px;
+  overflow: hidden;
   padding: 20px 20px 20px 15px;
   position: relative;
   width: 100%;
-  overflow: hidden;
 
   &:hover {
     border-left: 5px solid var(--green-dark);
@@ -133,17 +133,17 @@
     width: 100%;
 
     @media screen and (min-width: 641px) {
-      width: 60%;
       justify-content: flex-end;
+      width: 60%;
     };
 
     .tag {
       background-color: var(--green-light);
       border-radius: 4px;
-      margin: 0px;
       color: var(--green-dark);
-      padding: 6px var(--item-x-padding) var(--item-y-padding) var(--item-x-padding);
       cursor: pointer;
+      margin: 0px;
+      padding: 6px var(--item-x-padding) var(--item-y-padding) var(--item-x-padding);
       &:hover {
         color: white;
         background-color: var(--green-dark);

@@ -20,31 +20,32 @@ export function SearchedTags(
     delay: 0,
   });
 
-  return <div className={`searched-tags ${tags.length === 0 ? 'collapsed' : 'expanded'}`}>
-    <div className="tags">
-      {
-        transitions((style, item) => {
-          return <animated.div className="tag" key={`searched-${item}`} onClick={_ => clearTag(item)}
-            style={style}
-          >
-            <p>{item}</p>
-            <div className="x-wrapper">
-              <div className="x-wrapper-2">
-                <div className="x-part1" />
-                <div className="x-part2" />
+  return (
+    <div className={`searched-tags ${tags.length === 0 ? 'collapsed' : 'expanded'}`}>
+      <div className="tags">
+        {
+          transitions((style, item) => {
+            return <animated.div className="tag" key={`searched-${item}`} onClick={_ => clearTag(item)}
+              style={style}
+            >
+              <p>{item}</p>
+              <div className="x-wrapper">
+                <div className="x-wrapper-2">
+                  <div className="x-part1" />
+                  <div className="x-part2" />
+                </div>
               </div>
-            </div>
-          </animated.div>
-        })
-      }
-    </div>
-    <div className="dummy" />
-    {/*
+            </animated.div>
+          })
+        }
+      </div>
+        {/*
+          // without animation
       tags.length > 0
         ? <p className="tag-clear" onClick={_ => clearAllTags()}>Clear All</p>
         : null
         */}
-    <p className="tag-clear" onClick={_ => clearAllTags()}>Clear All</p>
-
-  </div>
+      <p className="tag-clear" onClick={_ => clearAllTags()}>Clear All</p>
+    </div>
+  );
 }
