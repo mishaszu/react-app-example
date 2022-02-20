@@ -14,15 +14,15 @@
   position: relative;
   width: 100%;
 
-  &:hover {
-    border-left: 5px solid var(--green-dark);
-  }
-
   @media screen and (min-width: 641px) {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
     padding: 40px 40px 40px 15px;
+
+    &:hover {
+      border-left: 5px solid var(--green-dark);
+    }
   };
 
   .left-side {
@@ -148,10 +148,12 @@
       line-height: 24px;
       margin: 0px;
       padding: var(--item-y-padding) var(--item-x-padding);
-      &:hover {
-        color: white;
-        background-color: var(--green-dark);
-      }
+      @media screen and (min-width: 641px) {
+        &:hover {
+          color: white;
+          background-color: var(--green-dark);
+        }
+      };
     }
   }
 }

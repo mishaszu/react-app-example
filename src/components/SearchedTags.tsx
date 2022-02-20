@@ -25,11 +25,11 @@ export default function SearchedTags(
       <div className="tags">
         {
           transitions((style, item) => {
-            return <animated.div className="tag" key={`searched-${item}`} onClick={_ => clearTag(item)}
+            return <animated.div className="tag" key={`searched-${item}`}
               style={style}
             >
               <p>{item}</p>
-              <div className="x-wrapper">
+              <div className="x-wrapper" onClick={_ => clearTag(item)}>
                 <div className="x-wrapper-2">
                   <div className="x-part1" />
                   <div className="x-part2" />
