@@ -1,7 +1,7 @@
 import {useTransition, animated} from 'react-spring'
 import './SearchedTags.scss'
 
-export function SearchedTags(
+export default function SearchedTags(
   {
     tags,
     clearTag,

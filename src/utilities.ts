@@ -1,4 +1,4 @@
-import {JobOfferComplete} from "./components/JobCard";
+import {JobOffer, JobOfferComplete} from "./components/JobCard";
 
 export const searchFilterOffersByTags = (searchTags: string[]) => (job: JobOfferComplete) => {
   if (searchTags.length > 0) {
@@ -10,3 +10,10 @@ export const searchFilterOffersByTags = (searchTags: string[]) => (job: JobOffer
     return true;
   }
 }
+
+export const dataToCompleteData = (data: JobOffer[]): JobOfferComplete[] =>
+  data.map(o => ({
+    ...o,
+    logo: o.logo.slice(1),
+    completeTags: [o.role, o.level, ...o.tags]
+  }));
