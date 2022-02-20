@@ -26,6 +26,12 @@
     --content-top-margin-desktop: calc((var(--banner-height-desktop) / 2) - (var(--search-height) - var(--banner-height-desktop)) / 2.5);
 
     --base-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+
+    --card-padding: 20px 20px 20px 15px;
+
+    @media screen and (min-width: 641px) {
+      --card-padding: 40px 40px 40px 35px;
+    }
 }
 
 body {

@@ -1,4 +1,5 @@
 import {useMemo, useState} from 'react'
+import {useTransition} from 'react-spring'
 import './App.scss'
 import Banner from './components/Banner'
 import SearchBar from './components/SearchBar'
@@ -51,6 +52,14 @@ function App() {
     }
   }
 
+  const transitions = useTransition(jobs.filter(searchFilter), {
+    from: {opacity: 0, y: 10, maxHeight: 0, padding: "0px 0px 0px 0px", margin: "0px 0px"},
+    enter: {opacity: 1, y: 0, maxHeight: 500, padding: "var(--card-padding)", margin: "12px 0px"},
+    leave: {opacity: 0, y: 10, maxHeight: 0, padding: "0px 0px 0px 0px", margin: "0px 0px"},
+    delay: 0,
+    trail:100
+  });
+
   return (
     <div className="App">
       <Banner />
@@ -59,9 +68,9 @@ function App() {
         <SearchedTags tags={searchTagsValues} clearTag={clearTag} clearAllTags={clearAllTags} />
         <div className="searched-tabs"></div>
         {
-          jobs.filter(searchFilter).map(d =>
-            <JobCard addTag={addTag} key={d.id} jobOffer={d} />
-          )
+          transitions((styles, item) => {
+            return <JobCard styles={styles} addTag={addTag} key={item.id} jobOffer={item} />
+          })
         }
       </div>
     </div>

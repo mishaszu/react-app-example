@@ -1,6 +1,24 @@
+.expanded {
+  margin-bottom: 8px;
+  max-height: 500px;
+  min-height: 32px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.collapsed  {
+  max-height: 0px;
+  min-height: 0px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  opacity: 0;
+}
+
 .searched-tags {
   display: flex;
+  transition: all 0.2s;
   justify-content: space-between;
+
   .tags {
     display: flex;
     flex-wrap: wrap;

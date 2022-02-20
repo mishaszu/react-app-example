@@ -1,4 +1,5 @@
 import "./JobCard.scss"
+import {animated} from 'react-spring'
 
 export interface JobOffer {
   id: number,
@@ -15,14 +16,15 @@ export interface JobOffer {
   tags: string[],
 }
 
-interface Props {
+interface Props  {
   jobOffer: JobOffer,
   addTag(tag: string): void,
+  styles: any
 }
 
-export default function JobCard({jobOffer, addTag}: Props) {
+export default function JobCard({jobOffer, addTag, styles}: Props) {
   const tags = [jobOffer.role, jobOffer.level, ...jobOffer.tags]
-  return <div className="job-card">
+  return <animated.div className="job-card" style={styles}>
     <div className="left-side">
       <div className="img-wrapper">
         <img src={jobOffer.logo} alt={`${jobOffer.company} logo`} />
@@ -57,5 +59,5 @@ export default function JobCard({jobOffer, addTag}: Props) {
         tags.map(t => <p onClick={_ => addTag(t)} key={`${jobOffer.id}-${t}`} className="tag">{t}</p>)
       }
     </div>
-  </div >
+  </animated.div >
 }

@@ -12,6 +12,7 @@
   padding: 20px 20px 20px 15px;
   position: relative;
   width: 100%;
+  overflow: hidden;
 
   &:hover {
     border-left: 5px solid var(--green-dark);
@@ -21,7 +22,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    padding: 40px;
+    padding: 40px 40px 40px 15px;
   };
 
   .left-side {
