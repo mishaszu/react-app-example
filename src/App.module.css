@@ -12,7 +12,7 @@
   height: auto;
   margin-top: var(--content-top-margin-mobile);
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse) {
     max-width: 1110px;
     margin-top: var(--content-top-margin-desktop);
   };

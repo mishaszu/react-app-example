@@ -58,6 +58,7 @@ export default function JobCard({jobOffer, addTag, styles}: Props) {
           </div>
         </div>
       </div>
+      <div className={s["spacer"]}/>
       <div className={s["tags-wrapper"]}>
         {
           jobOffer.completeTags.map(t => <p onClick={_ => addTag(t)} key={`${jobOffer.id}-${t}`} className={s["tag"]}>{t}</p>)

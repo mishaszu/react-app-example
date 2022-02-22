@@ -14,7 +14,7 @@
   position: relative;
   width: 100%;
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     align-items: center;
     box-sizing: border-box;
     flex-direction: row;
@@ -51,7 +51,7 @@
   margin-bottom: 14px;
   width: 60px;
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     height: 88px;
     margin-bottom: 0px;
     width: 88px;
@@ -60,7 +60,7 @@
   @nest & > img {
     height: auto;
     width: 60px;
-    @media screen and (min-width: 641px) {
+    @media not all and (hover: none) and (pointer: coarse){
       width: 88px;
     };
   }
@@ -111,7 +111,8 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  @media screen and (min-width: 641px) {
+
+  @media not all and (hover: none) and (pointer: coarse){
     margin-bottom: 0px;
   };
 
@@ -130,6 +131,10 @@
   }
 }
 
+.spacer {
+  flex: 1 0 40px;
+}
+
 .tags-wrapper {
   display: flex;
   justify-content: flex-start;
@@ -137,7 +142,7 @@
   gap: 14px;
   width: 100%;
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     justify-content: flex-end;
     width: 60%;
   };
@@ -154,7 +159,7 @@
   line-height: 24px;
   margin: 0px;
   padding: var(--item-y-padding) var(--item-x-padding);
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     &:hover {
       color: white;
       background-color: var(--green-dark);

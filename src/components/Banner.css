@@ -8,7 +8,7 @@
   width: 100%;
   z-index: 0;
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     background-image: url("/assets/top-background-desktop.svg");
     height: var(--banner-height-desktop);
   };

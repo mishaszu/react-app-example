@@ -9,7 +9,7 @@
   overflow: hidden;
   width: 100%;
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     margin-bottom: 20px;
   };
 }
@@ -33,7 +33,7 @@
     font-weight: 700;
   }
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse){
     margin-left: 40px;
   };
 }
@@ -52,7 +52,7 @@
     background-color: GhostWhite;
   }
 
-  @media screen and (min-width: 641px) {
+  @media not all and (hover: none) and (pointer: coarse) {
     padding: 0px 40px;
 
     &:hover {
