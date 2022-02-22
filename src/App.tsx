@@ -26,7 +26,6 @@ function App() {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    console.log(e.target.search);
     const searchText = e.target.search.value;
     addTag(searchText);
     e.target.reset();

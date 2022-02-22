@@ -1,6 +1,7 @@
 .banner {
   background-color: var(--green-dark);
-  background-image: url("/assets/top-background-mobile.svg");
+  background: url("/assets/top-background-mobile.svg") no-repeat center center;
+  background-size: cover;
   height: var(--banner-height-mobile);
   overflow: hidden;
   position: absolute;
@@ -9,7 +10,8 @@
   z-index: 0;
 
   @media not all and (hover: none) and (pointer: coarse){
-    background-image: url("/assets/top-background-desktop.svg");
+    background: url("/assets/top-background-desktop.svg") no-repeat center center;
+    background-size: cover;
     height: var(--banner-height-desktop);
   };
 }

@@ -60,3 +60,7 @@
     }
   };
 }
+
+.active {
+  background-color: var(--green-light);
+}
