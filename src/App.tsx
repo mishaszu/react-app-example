@@ -1,6 +1,6 @@
 import {useMemo, useState} from 'react'
 import {useTransition} from 'react-spring'
-import './App.scss'
+import s from './App.module.css'
 import Banner from './components/Banner'
 import SearchBar from './components/SearchBar'
 import JobCard, {JobOfferComplete} from './components/JobCard'
@@ -51,9 +51,9 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className={s["App"]}>
       <Banner />
-      <div className="app-content">
+      <div className={s["app-content"]}>
         <SearchBar onSubmit={onSubmit} />
         <SearchedTags tags={searchTagsValues} clearTag={clearTag} clearAllTags={clearAllTags} />
         {

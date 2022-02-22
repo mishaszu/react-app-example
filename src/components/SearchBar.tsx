@@ -1,5 +1,5 @@
 import {FormEventHandler} from 'react';
-import './SearchBar.scss'
+import s from './SearchBar.module.css'
 
 interface Props {
   onSubmit: FormEventHandler<HTMLFormElement>,
@@ -7,9 +7,9 @@ interface Props {
 
 export default function SearchBar({onSubmit}: Props) {
   return (
-    <form className="search-bar" onSubmit={onSubmit}  autoComplete="off">
-      <input placeholder="Search" type="text" name="search" />
-      <button className="search-bar-button" type="submit">Submit</button>
+    <form className={s["search-bar" ]}onSubmit={onSubmit}  autoComplete="off">
+      <input placeholder="Search" className={s["input"]} type="text" name="search" />
+      <button className={s["search-bar-button" ]}type="submit">Submit</button>
     </form>
   )
 }

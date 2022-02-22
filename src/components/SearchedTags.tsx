@@ -1,5 +1,5 @@
 import {useTransition, animated} from 'react-spring'
-import './SearchedTags.scss'
+import s from './SearchedTags.module.css'
 
 export default function SearchedTags(
   {
@@ -21,31 +21,33 @@ export default function SearchedTags(
   });
 
   return (
-    <div className={`searched-tags ${tags.length === 0 ? 'collapsed' : 'expanded'}`}>
-      <div className="tags">
+    <div className={`${s['searched-tags']} ${tags.length === 0 ? s['collapsed'] : s['expanded']}`}>
+      <div className={s["tags"]}>
         {
           transitions((style, item) => {
-            return <animated.div className="tag" key={`searched-${item}`}
+            return <animated.div
+              className={s["tag"]}
+              key={`searched-${item}`}
               style={style}
             >
-              <p>{item}</p>
-              <div className="x-wrapper" onClick={_ => clearTag(item)}>
-                <div className="x-wrapper-2">
-                  <div className="x-part1" />
-                  <div className="x-part2" />
+              <p className={s["tag-title"]}>{item}</p>
+              <div className={s["x-wrapper" ]}onClick={_ => clearTag(item)}>
+                <div className={s["x-wrapper-inner"]}>
+                  <div className={s["x-part-1" ]}/>
+                  <div className={s["x-part-2" ]}/>
                 </div>
               </div>
             </animated.div>
           })
         }
       </div>
-        {/*
+      {/*
           // without animation
       tags.length > 0
         ? <p className="tag-clear" onClick={_ => clearAllTags()}>Clear All</p>
         : null
         */}
-      <p className="tag-clear" onClick={_ => clearAllTags()}>Clear All</p>
+      <p className={s["tag-clear" ]}onClick={_ => clearAllTags()}>Clear All</p>
     </div>
   );
 }

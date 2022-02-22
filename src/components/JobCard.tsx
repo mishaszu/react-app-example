@@ -1,4 +1,4 @@
-import "./JobCard.scss"
+import s from "./JobCard.module.css"
 import {animated} from 'react-spring'
 
 export interface JobOffer {
@@ -28,39 +28,39 @@ interface Props {
 
 export default function JobCard({jobOffer, addTag, styles}: Props) {
   return (
-    <animated.div className="job-card" style={styles}>
-      <div className="left-side">
-        <div className="img-wrapper">
+    <animated.div className={s["job-card"]} style={styles}>
+      <div className={s["left-side"]}>
+        <div className={s["img-wrapper"]}>
           <img src={jobOffer.logo} alt={`${jobOffer.company} logo`} />
         </div>
-        <div className="info-wrapper">
-          <div className="company-wrapper">
-            <p> {jobOffer.company}
+        <div className={s["info-wrapper"]}>
+          <div className={s["company-wrapper"]}>
+            <p className={s["offer-headline"]}> {jobOffer.company}
               {jobOffer.new &&
-                <span className="light">
+                <span className={s["light"]}>
                   NEW!
                 </span>
               }
               {jobOffer.featured &&
-                <span className="dark">
+                <span className={s["dark"]}>
                   FEATURED
                 </span>
               }
             </p>
           </div>
-          <p className="position">{jobOffer.position}</p>
-          <div className="extra-info">
-            <p>{jobOffer.postedAt}</p>
-            <div className="dot" />
-            <p>{jobOffer.type}</p>
-            <div className="dot" />
-            <p>{jobOffer.location}</p>
+          <p className={s["position"]}>{jobOffer.position}</p>
+          <div className={s["extra-info"]}>
+            <p className={s["info-text"]}>{jobOffer.postedAt}</p>
+            <div className={s["dot"]} />
+            <p className={s["info-text"]}>{jobOffer.type}</p>
+            <div className={s["dot"]} />
+            <p className={s["info-text"]}>{jobOffer.location}</p>
           </div>
         </div>
       </div>
-      <div className="tags-wrapper">
+      <div className={s["tags-wrapper"]}>
         {
-          jobOffer.completeTags.map(t => <p onClick={_ => addTag(t)} key={`${jobOffer.id}-${t}`} className="tag">{t}</p>)
+          jobOffer.completeTags.map(t => <p onClick={_ => addTag(t)} key={`${jobOffer.id}-${t}`} className={s["tag"]}>{t}</p>)
         }
       </div>
     </animated.div >
